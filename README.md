@@ -25,21 +25,22 @@ Movie Library is a web application built with .NET Core that allows users to man
 - **Visual Studio**: Integrated development environment (IDE) for development.
 
 ## Getting Started
-1. Clone the repository:
-   git clone https://github.com/yourusername/movielibrary.git
-2. Navigate to the project directory:
-   cd movielibrary
-3. Open the project in Visual Studio.
-4. Update the database connection string in `appsettings.json`.
-5. Run the following command to apply migrations and create the database:
-   dotnet ef database update
-6. Build and run the application:
-   dotnet run
 
-## Contributing
-Contributions are welcome! Please fork the repository and create a pull request with your changes.
+```bash
+# 1. Clone the repository:
+git clone https://github.com/yourusername/movielibrary.git
 
-## Contact
-For any questions or suggestions, please open an issue or contact me on saif_ahmed@aucegypt.edu.
+# 2. Navigate to the project directory:
+cd movielibrary
 
-   
+# 3. Open the project in Visual Studio.
+# (This step is done in the Visual Studio interface, not the terminal)
+
+# 4. Update the database connection string in `appsettings.json`.
+# (This step is done in the Visual Studio interface, not the terminal)
+
+# 5. Apply migrations and create the database:
+dotnet ef database update
+
+# 6. Build and run the application:
+dotnet run
