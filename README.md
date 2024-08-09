@@ -28,7 +28,7 @@ This project is for learning purposes.
 ## Getting Started
 1. Clone the repository:
 ```bash
-git clone https://github.com/saifahmeed/movielab.git
+[git clone https://github.com/saifahmeed/movielab.git](https://github.com/Saifahmeed/MovieLab.git)
 ```
 2. Navigate to the project directory:
 ```bash
