@@ -15,11 +15,11 @@ namespace MovieLab.ViewModels
         [Required, StringLength(2500)]
         public string Story { get; set; }
         [Display(Name = "Select Poster ...")]
-        public IFormFile Poster { get; set; }
+        public IFormFile? Poster { get; set; }
         [Display(Name = "Genre")]
         public byte GenreId { get; set; } // navigation property
         public IEnumerable<Genre>? Genres { get; set; }
-        public string PosterBase64 { get; set; }
+        public string? PosterBase64 { get; set; }
 
 
     }

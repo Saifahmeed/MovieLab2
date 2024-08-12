@@ -1,0 +1,145 @@
+﻿@model MovieFormViewModel
+@{
+    ViewData["Title"] = "Movies";
+}
+<h2>
+    <i class="bi bi-camera-reels"></i>
+    @Model.Title
+</h2>
+<hr />
+<div class="mt-4">
+    <div class="card mb-4" style="max-width: 1250px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <div class="col-md-12 poster">
+                    <img src="@(string.IsNullOrEmpty(Model.PosterBase64) ? "/path/to/default-image.jpg" : $"data:image/jpeg;base64,{Model.PosterBase64}")" alt="Poster" style="max-width: 100%; max-height:500px">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Title (@Model.Year)</h5>
+                    <p class="card-text">@Model.Story</p>
+                    <p class="card-text mb-0 mt-2">
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <small class="text-muted">@Model.Rate.ToString("0.0")</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form class="row g-3 needs-validation" novalidate>
+    <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">First name</label>
+        <input type="text" class="form-control" id="validationCustom01" value=" " required>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+    </div>
+    <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Last name</label>
+        <input type="text" class="form-control" id="validationCustom02" value=" " required>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+    </div>
+    <div class="col-md-4">
+        <label for="validationCustomUsername" class="form-label">Country</label>
+        <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend"></span>
+            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+            <div class="invalid-feedback">
+                Please write your country.
+            </div>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 ">
+        <label for="validationCustom03" class="form-label">Comment</label>
+        <textarea maxlength="2500" rows="4" class="form-control" id="validationCustom03" required></textarea>
+        <div class="invalid-feedback">
+            Please write your opinion about the movie.
+        </div>
+        <div class="valid-feedback">
+            Thank you for your feedback!
+        </div>
+    </div>
+    <div class="col-md-6">
+        <label for="validationCustom04" class="form-label">Rate</label>
+        <input type="number" class="form-control" id="Ratee" asp-for="Rate" value=" " min="0" max="10" id="validationCustom04" required />
+        <div class="invalid-feedback">
+            Please choose a rate out of 10.
+        </div>
+        <div class="valid-feedback">
+            <text></text>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+            <label class="form-check-label" for="invalidCheck">
+                Agree that you want to submit the form.
+            </label>
+            <div class="invalid-feedback">
+                You must agree before submitting.
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+</form>
+<hr />
+<div>
+    <h2>Comments</h2>
+</div>
+<figure class="text-center">
+    <blockquote class="blockquote">
+        <p>Very Good Movie</p>
+    </blockquote>
+    <figcaption class="blockquote-footer">
+        Saif Ahmed from Egypt.
+    </figcaption>
+</figure>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $('#Ratee').on('input', function () {
+            var rate = $(this).val();
+            var progress = $(this).siblings('.valid-feedback').find('text');
+            if (rate > 5) {
+                var neww = "Looks like a good movie!"
+            }
+            else {
+                var neww = "BAD"
+                            }
+            progress.text(neww);
+                    });
+
+        (() => {
+            'use strict';
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation');
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+}

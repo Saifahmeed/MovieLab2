@@ -6,14 +6,14 @@ namespace MovieLab.Models
     {
         public int Id { get; set; } //integer is autoincremeneted so u dont need data anotation
         [Required, MaxLength(250)]
-        public string Title { get; set; } // u have to write required over strings as its default is null
+        public  string Title { get; set; } // u have to write required over strings as its default is null
         public int Year { get; set; }
         public double Rate { get; set; }
         [Required, MaxLength(2500)]
-        public string Story { get; set; }
+        public  string Story { get; set; }
         [Required]
-        public byte[] Poster{ get; set; }
+        public  byte[] Poster { get; set; }
         public byte GenreId { get; set; } // navigation property
-        public Genre Genre { get; set; } 
+        public  Genre Genre { get; set; }
     }
 }
