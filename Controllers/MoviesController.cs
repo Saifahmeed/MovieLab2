@@ -137,6 +137,7 @@ namespace MovieLab.Controllers
             return RedirectToAction(nameof(Index));
 
         }
+        
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -155,7 +156,6 @@ namespace MovieLab.Controllers
             {
                 posterBase64 = Convert.ToBase64String(movie.Poster);
             }
-
             var model = new MovieFormViewModel
             {
                 Id = movie.Id,
@@ -165,10 +165,41 @@ namespace MovieLab.Controllers
                 Story = movie.Story,
                 PosterBase64 = posterBase64,
                 GenreId = movie.GenreId,
-                Genres = await _context.Genres.OrderBy(m => m.Name).ToListAsync()
+                Genres = await _context.Genres.OrderBy(m => m.Name).ToListAsync(),
+                Reviews = await _context.Reviews.Where(r => r.MovieId == id).ToListAsync()
             };
             return View(model);
         }
+        public async Task<IActionResult> Admin(int? id)
+        {
+            var model = new AdminViewModel
+            {
+                SelectedId = id
+            };
+            return View(model);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Admin(AdminViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var admin = await _context.Admins
+                    .FirstOrDefaultAsync(a => a.Name == model.Username && a.Password == model.Password);
+
+                if (admin != null)
+                {
+                    return RedirectToAction("Index", "Reviews");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Invalid username or password.");
+                }
+            }
+            return View(model);
+        }
+
+
         [Route("movies/delete/{id}")]
         public async Task<IActionResult> Delete(int? id)
         {

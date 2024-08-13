@@ -40,7 +40,7 @@ input[type=number] {
     font-size:14px;
 }
 .poster {
-    min-height: 236px;
+    min-height: 500px;
     background-size: 100%;
     background-position: center;
     transition: all 0.3s ease-in-out;
@@ -48,6 +48,6 @@ input[type=number] {
 
 .poster:hover {
     background-size: 125%;
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: all 0.3s ease-in-out;
 }

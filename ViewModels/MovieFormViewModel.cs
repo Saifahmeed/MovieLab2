@@ -21,6 +21,8 @@ namespace MovieLab.ViewModels
         public IEnumerable<Genre>? Genres { get; set; }
         public string? PosterBase64 { get; set; }
 
+        public IEnumerable<Review>? Reviews { get; set; }
+
 
     }
 }
