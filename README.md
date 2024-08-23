@@ -21,7 +21,6 @@ This project is for learning purposes.
 - **Bootstrap**: CSS framework for responsive design.
 - **JavaScript**: Client-side scripting.
 - **jQuery**: JavaScript library for DOM manipulation and AJAX requests.
-- **Razor**: Templating engine for generating dynamic web pages.
 - **Visual Studio**: Integrated development environment (IDE) for development.
 
 ## Getting Started
