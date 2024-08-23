@@ -12,11 +12,10 @@ This project is for learning purposes.
 - Responsive design for a seamless experience on different devices.
 
 ## Technologies Used
-- **.NET Core**: Backend framework for building the web application.
+- **ASP.NET Core MVC**: Backend framework for building the web application.
 - **C#**: Programming language used for backend development.
 - **Entity Framework Core**: ORM for database operations.
 - **SQL Server**: Database for storing movie data.
-- **ASP.NET Core MVC**: Framework for building the web application.
 - **HTML5**: Markup language for structuring the web pages.
 - **CSS**: Styling the web pages.
 - **Bootstrap**: CSS framework for responsive design.
