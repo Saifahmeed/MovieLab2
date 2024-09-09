@@ -1,5 +1,5 @@
 # Movie Library
-
+[![Project Testing Video](https://img.youtube.com/vi/-QLV0y6z1c4/0.jpg)](https://www.youtube.com/watch?v=-QLV0y6z1c4)
 ## Description
 Movie Library is a web application built with .NET Core that allows users to manage a collection of movies. Users can add, edit, and rate movies. The application provides a user-friendly interface for managing movie details, including title, genre, year, rating, and poster images.
 This project is for learning purposes.
