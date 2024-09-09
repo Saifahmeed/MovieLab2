@@ -1,5 +1,5 @@
 # Movie Library
-[![YouTube](http://i.ytimg.com/vi/-QLV0y6z1c4/hqdefault.jpg)](https://www.youtube.com/watch?v=-QLV0y6z1c4)
+
 ## Description
 Movie Library is a web application built with .NET Core that allows users to manage a collection of movies. Users can add, edit, and rate movies. The application provides a user-friendly interface for managing movie details, including title, genre, year, rating, and poster images.
 This project is for learning purposes.
@@ -23,6 +23,9 @@ This project is for learning purposes.
 - **jQuery**: JavaScript library for DOM manipulation and AJAX requests.
 - **Visual Studio**: Integrated development environment (IDE) for development.
 
+## Testing
+Check out this YouTube video for the website testing.
+[![YouTube](http://i.ytimg.com/vi/zbt0f06g43E/hqdefault.jpg)](https://www.youtube.com/watch?v=zbt0f06g43E)
 ## Getting Started
 1. Clone the repository:
 ```bash
